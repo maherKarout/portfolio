@@ -1,0 +1,172 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+    margin: 30px 50px;
+    color: var(--dark);
+  }
+  :root{
+    --primary:#ddd;
+    --dark:#333;
+    --light:#fff; 
+    --shadow:0px 1px 5px rgba(104 ,104,104,0.8);
+  
+  }
+  .btn{
+    background-color: var(--dark);
+    color: var(--light);
+    padding:0.6rem  1.3rem;
+    text-decoration: none;
+    border: 0;
+    display:inline-block;
+  }
+  img{
+    max-width: 100%;
+    box-shadow: var(--shadow);
+  }
+  .wrapper{
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  /* Nvaigation */
+  .main-nav ul{
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(4,1fr);
+    list-style: none;
+  }
+  .main-nav a{
+    background-color: var(--primary);
+    text-decoration: none ;
+    text-align: center;
+    padding: 0.8rem;
+    color: var(--dark);
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+    display: block;
+  }
+  .main-nav a:hover{
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  
+  /* Top Container */
+  
+  .top-container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+    "showcase showcase top-box-a"
+    "showcase showcase top-box-b";
+  }
+  .showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background-image:url(img/pexels-vlada-karpovich-4050302.jpg);
+    background-size: cover;
+    background-position: center;
+    padding:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .showcase h1{
+    font-size: 4rem;
+    color: var(--light);
+    margin-bottom: 0;
+  }
+  .showcase p{
+    font-size:1.3rem;
+    color: var(--light);
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  /* Top Box */
+  .top-box{
+    background-color: var(--primary);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .top-box .price{
+    font-size: 2rem;
+  }
+  .top-box-a{
+    grid-area: top-box-a;
+  }
+  .top-box-b{
+    grid-area: top-box-b;
+  }
+  /* Boxes */
+  .boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  }
+  .box{
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-gap: 15px;
+    box-shadow: var(--shadow);
+  }
+  /* INfo */
+  .info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 3rem;
+    background-color: var(--primary);
+    box-shadow: var(--shadow);
+  }
+  .info h2{
+    margin-bottom: 20px;
+  }
+  .protofolio{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 20px;
+  }
+  .protofolio img{
+    width: 100%;
+    box-shadow: var(--shadow);
+  }
+  footer{
+    background-color: var(--dark);
+    margin-top: 2rem;
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Respnsive */
+  @media (max-width:700px) {
+    .top-container{
+      grid-template-areas:
+      "showcase showcase"
+      "top-box-a top-box-b";
+    }
+    .showcase h1{
+      font-size: 2.5rem;
+    }
+    .main-nav ul{
+      grid-template-columns: 1fr;
+    }
+    .info{
+      grid-template-columns: 1fr  ;
+    }
+  }
+  @media (max-width:500px) {
+     .top-container{
+      grid-template-areas: 
+      "showcase"
+      "top-box-a"
+      "top-box-b";
+     }
+    
+  }

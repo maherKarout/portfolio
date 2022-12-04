@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+
+body{
+    background: linear-gradient(rgb(5,221,245) ,rgb(6, 150 , 255));
+    height: 100vh;
+    padding: 1px;
+  }
+  .container{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%) ;
+    perspective: 1000px;
+  }
+  .container .box{
+    transform-style: preserve-3d;
+    width: 250px;
+    height: 250px;
+    margin: 100px auto;
+    position: relative;
+    transform: rotateY(0deg);
+    animation: effect 5s infinite;  
+  }
+  .container .box .card{
+    width: 250px;
+    height:250px;
+    line-height: 250px;
+    text-align: center;
+    position: absolute;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    font-size: 30px;
+    transition: 1s;
+  }
+  
+  .left{
+    transform: rotateY(90deg)  translateZ(-125px);
+  
+  }
+  
+  .right{
+    transform: rotateY(90deg) translateZ(+125px);
+  
+  }
+  
+  .top{
+    transform: rotateX(90deg) translateZ(+125px);
+  
+  }
+  
+  .bottom{
+    transform: rotateX(90deg) translateZ(-125px);
+  
+  }
+  
+  .back{
+    transform: translateZ(-125px);
+  
+  }
+  
+  .front{
+    transform: translateZ(+125px);
+  
+  }
+  
+  input{
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    position: absolute ;
+    top: 100px;
+    left: 50%;
+    font-size: 30px;
+    transform: translate(-50%);
+  
+  }
+  @keyframes effect {
+    0%{
+      transform: rotateX(-45deg) rotateY(45deg);
+    }
+    25%{
+      transform: rotateX(45deg) rotateY(45deg);
+    }
+    50%{
+      transform: rotateX(-45deg) rotateY(-45deg);
+    }
+    75%{
+      transform: rotateX(45deg) rotateY(45deg);
+    }
+    100%{
+      transform: rotateX(45deg) rotateY(-45deg);
+    }
+  
+  }
+  
+  input:focus~.container .box .left{
+    transform: rotateY(90deg) translateZ(-250px);
+  }
+  input:focus~.container .box .right{
+    transform: rotateY(90deg) translateZ(250px);
+  }
+  input:focus~.container .box .top{
+    transform: rotateX(90deg) translateZ(250px);
+  }
+  input:focus~.container .box .botom{
+    transform: rotateX(90deg) translateZ(-250px);
+  }
+  input:focus~.container .box .back{
+    transform:  translateZ(-250px);
+  }
+  input:focus~.container .box .front{
+    transform: translateZ(250px);
+  }

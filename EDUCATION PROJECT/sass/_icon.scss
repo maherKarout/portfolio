@@ -1,0 +1,49 @@
+@import "./color.scss";
+
+.navbar-toggler {
+  box-shadow: none !important;
+}
+.button-header-icon {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.button-header-icon span {
+  display: inline-block;
+  height: 2px;
+  width: 100%;
+  background-color: $color-dark;
+}
+.button-header-icon.active span {
+  height: 0;
+}
+.button-header-icon {
+  span:before,
+  span:after {
+    content: "";
+    width: 70%;
+    height: 2px;
+    background-color: $color-dark;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+    transform-origin: left;
+  }
+
+  span:before {
+    top: 0;
+  }
+  span:after {
+    bottom: 0;
+  }
+}
+.button-header-icon.active span:before {
+  transform: rotate(45deg);
+  width: 100%;
+}
+.button-header-icon.active span:after {
+  transform: rotate(-45deg);
+  width: 100%;
+}

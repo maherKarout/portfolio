@@ -1,0 +1,24 @@
+body::before {
+  content: "";
+  display: block;
+  height: 40px;
+}
+
+.instructors .card-body img {
+  width: 70px;
+  height: 70px;
+}
+.instructors .card-body a {
+  padding: 2px;
+}
+.concat img {
+  max-height: 400px;
+}
+
+a {
+  transition: 1s !important;
+}
+
+a:focus {
+  transition: 4s;
+}

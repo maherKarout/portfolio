@@ -1,0 +1,544 @@
+@import "./color.scss";
+@import "./icon.scss";
+@import "./function";
+$small-font: 13px;
+
+// ********sub header*************
+.sub-header {
+  background-color: $color-dark;
+  color: $color-light;
+  font-size: $small-font;
+  p {
+    margin: 0;
+    padding: 10px 0;
+    text-align: left;
+  }
+  span {
+    color: $color-wroning;
+  }
+  ul li {
+    padding: 10px;
+    path {
+      color: $color-light;
+    }
+  }
+}
+// **********end sub header*****
+
+// *********** main-header********
+$top-header: 0;
+.main-header {
+  position: absolute;
+  z-index: 10;
+  // top: calc(40px + $top-header);
+  top: 40px;
+  left: 0;
+  right: 0;
+  padding: 30px 0;
+  background-color: rgba(250, 250, 250, 0.15);
+
+  .logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  button.navbar-toggler {
+    padding: 0;
+  }
+  .show > ul {
+    position: absolute;
+    background: white;
+    width: 80vh;
+    text-align: center;
+    font-weight: bold;
+    left: -40vh;
+    top: calc(100% + 30px);
+    z-index: 10;
+  }
+  .show > ul > li:last-child {
+    border-top: 1px solid $color-dark;
+  }
+  ul li a {
+    text-transform: capitalize;
+  }
+  ul li a.active {
+    color: $color-wroning !important;
+  }
+  ul li a:hover {
+    color: $color-wroning;
+  }
+}
+.sticky {
+  position: sticky;
+  background-color: $color-light;
+  color: $color-dark !important;
+  top: 0;
+  transition: 1s;
+  a {
+    color: $color-dark !important;
+  }
+}
+@media (min-width: 768px) {
+  .main-header,
+  .main-header .nav-link {
+    color: $color-light;
+  }
+}
+@media (max-width: 768px) {
+  .main-header {
+    background-color: $color-light;
+  }
+}
+
+// *******Landing***********
+.landing {
+  position: relative;
+  color: $color-light;
+  video {
+    object-fit: cover;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    min-height: 100vh;
+  }
+  .overlay {
+    position: absolute;
+    background-color: rgba(31, 39, 43, 0.75);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p:first-child {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: $small-font;
+    }
+    h3 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    > p {
+      font-size: $small-font;
+      line-height: 2;
+    }
+    a {
+      font-size: $small-font;
+      padding: 12px 30px;
+      text-transform: uppercase;
+    }
+  }
+  // Start swiper
+
+  .slider {
+    position: absolute;
+    bottom: -125px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    .swiper {
+      width: 100%;
+      height: 300px;
+      .swiper-slide {
+        height: 300px;
+        @include center;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: none;
+      }
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        color: $color-dark;
+        font-size: 20px;
+      }
+      .swiper-button-prev {
+        left: 0;
+      }
+      .swiper-button-next {
+        right: 0;
+      }
+
+      @media (min-width: 992px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: flex;
+        }
+      }
+      .box {
+        height: 250px;
+        background-image: url("../images/service-item-bg.jpg");
+        border-radius: 25px;
+        text-align: center;
+        padding: 30px;
+        color: $color-light;
+        .img {
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: $small-font;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+// *******Landing***********
+
+// Section meeting
+
+.meeting {
+  background-image: url("../images/meetings-bg.jpg");
+  padding: 20px;
+  padding-top: 300px;
+
+  hr {
+    background-color: white;
+    padding: 1px;
+    margin-bottom: 50px;
+  }
+  h1 {
+    text-align: center;
+    color: $color-light;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .row {
+    padding: 0 12px;
+  }
+  @media (max-width: 576px) {
+    .row {
+      padding: 12px 0;
+    }
+    .col-lg-6,
+    .col-lg-4 {
+      padding: 0;
+    }
+    .card {
+      width: 100%;
+      margin: 10px auto !important;
+      padding: 0;
+    }
+    .Catgories {
+      width: 100%;
+      padding: 0;
+      margin: auto;
+    }
+  }
+  .card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+    .price {
+      display: inline-block;
+      padding: 5px;
+      background-color: $color-light;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 5px 10px;
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+    .card-img img {
+      width: 100%;
+      overflow: hidden;
+    }
+    .card-body {
+      display: flex;
+      gap: 40px;
+      padding: 20px;
+      .card-details {
+        h5 {
+          color: $color-wroning;
+          margin-bottom: 20px;
+        }
+      }
+      .card-title {
+        margin-bottom: 20px;
+      }
+      .card-text {
+        p:first-child {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+  .Catgories {
+    background-color: $color-light;
+    color: $color-dark;
+    padding: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    // max-width: 350px;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 10px;
+      }
+      li:hover {
+        color: $color-wroning;
+      }
+    }
+  }
+}
+
+.applay-now {
+  background-image: url("../images/apply-bg.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  padding: 140px 0;
+
+  .item-box {
+    .card {
+      padding: 40px;
+      background-color: rgba(250, 250, 250, 0.15);
+      color: $color-light;
+      margin-bottom: 30px;
+      h3 {
+        font-weight: bold;
+      }
+      p {
+        font-size: $small-font;
+      }
+      button {
+        width: fit-content;
+        color: $color-light;
+      }
+    }
+  }
+  .accordion {
+    .accordion-item {
+      padding: 40px;
+    }
+    h1.accordion-button {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: transparent !important;
+    }
+    .accordion-button:not(.collapsed)::after {
+      transform: rotate(45deg);
+      border-color: $color-wroning;
+      background-image: none;
+    }
+    .accordion-button::after {
+      background-image: none;
+      transform: rotate(-45deg);
+      width: 10px;
+      height: 10px;
+      border: 3px solid black;
+      border-top: none;
+      border-left: none;
+    }
+    .accordion-button:not(.collapsed) {
+      color: $color-wroning;
+    }
+  }
+}
+
+// STATRT COURSES
+.courses {
+  padding: 100px 0;
+  background-image: url("../images/meetings-bg.jpg");
+
+  h2.title {
+    color: $color-light;
+    box-shadow: 0px 1px;
+    padding-bottom: 20px;
+  }
+
+  .swiper {
+    padding: 40px 0;
+    .card {
+      text-align: center;
+      border: none;
+      .card-img {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .card-title {
+        font-weight: bold;
+        padding: 20px;
+      }
+      .card-details {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        .stars {
+          svg {
+            color: $color-wroning;
+          }
+        }
+        span {
+          color: $color-danger;
+        }
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: $color-light;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 11px 2px black;
+  }
+  @media (max-width: 992px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: black;
+    font-size: 20px;
+  }
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 25px;
+    background-color: white;
+  }
+  .swiper-pagination-bullet-active {
+    width: 20px;
+  }
+}
+//END COURSES
+
+// start our Facut
+
+.our-fact {
+  background-image: url("../images/facts-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  h2 {
+    color: $color-light;
+    margin-bottom: 50px;
+    font-size: 38px;
+    font-weight: bold;
+  }
+  .img-video {
+    border-radius: 15px;
+    // max-width: 300px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+
+  .fact-box {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(250, 250, 250, 0.15);
+    display: inline-block;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: $color-light;
+    min-width: 150px;
+    p:first-child {
+      color: $color-wroning;
+    }
+    p:last-child {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .fact-box {
+    width: 100%;
+    display: block;
+  }
+}
+
+// Start concat
+
+.concat {
+  padding: 140px 0;
+  background-image: url("../images/meetings-bg.jpg");
+  form {
+    padding: 50px;
+    background-color: $color-light;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    h2 {
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    input[type="text"],
+    textarea {
+      border: none;
+      margin: 20px 10px;
+      width: 100%;
+      padding: 10px;
+    }
+    textarea {
+      height: 200px;
+    }
+    input:hover {
+      background-color: rgb(206, 194, 194);
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+    }
+  }
+  .right-info {
+    background-color: $color-danger;
+    padding: 20px;
+    color: $color-light;
+    border-radius: 20px;
+
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 5px;
+        padding: 20px 0;
+        box-shadow: 0 1px 0 0 rgba(250, 250, 250, 0.15);
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        span {
+          font-weight: bold;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-image: url("../images/meetings-bg.jpg");
+  padding: 20px;
+  border-top: 1px solid rgba(250, 250, 250, 0.15);
+  text-align: center;
+  color: $color-light;
+}
